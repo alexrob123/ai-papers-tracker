@@ -1,7 +1,10 @@
 [project]
 name = "ai-papers-tracker"
 version = "0.1.0"
-description = "Add your description here"
+description = "Tracks new AI research papers and emails you when new ones show up"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "requests>=2.34.2",
+]
