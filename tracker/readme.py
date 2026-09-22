@@ -17,8 +17,11 @@ def render_table(papers: list[dict[str, Any]], limit: int = 10) -> str:
     for paper in rows:
         category = paper.get("category") or "-"
         source = paper["source"].capitalize()
+        # Use a non-breaking hyphen so "YYYY-MM-DD" can't wrap onto two
+        # lines when the column is squeezed by a long title.
+        date = paper["date"].replace("-", "‑")
         lines.append(
-            f"| {paper['date']} | {source} | {category} | "
+            f"| {date} | {source} | {category} | "
             f"[{paper['title']}]({paper['url']}) |"
         )
     return "\n".join(lines)

@@ -16,16 +16,16 @@ file back to the repo.
 <!-- LATEST_PAPERS:START -->
 | Date | Source | Category | Title |
 | --- | --- | --- | --- |
-| 2026-09-17 | Anthropic | Science | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) |
-| 2026-09-10 | Anthropic | Frontier Red Team | [Measuring tactical intelligence targeting and conventional weapons capabilities of AI models](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |
-| 2026-09-09 | Anthropic | Alignment | [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) |
-| 2026-09-04 | Anthropic | Science | [Formalizing Fermat's Last Theorem](https://www.anthropic.com/research/formalizing-fermats-last-theorem) |
-| 2026-08-28 | Anthropic | Alignment | [Automated researchers can reliably mitigate alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) |
-| 2026-08-26 | Anthropic | Societal Impacts | [Enabling independent research on how people use Claude](https://www.anthropic.com/research/enabling-independent-research) |
-| 2026-08-18 | Anthropic | Science | [How Claude is accelerating protein design and analytical chemistry](https://www.anthropic.com/research/Claude-accelerates-protein-design) |
-| 2026-08-13 | Anthropic | Frontier Red Team | [Patterns and problems in emerging multiagent systems](https://www.anthropic.com/research/multiagent-systems) |
-| 2026-08-12 | Anthropic | Economics | [Reviewing the evidence on worker retraining programs](https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs) |
-| 2026-08-10 | Anthropic | Science | [Learning more about Claude's mathematical capabilities](https://www.anthropic.com/research/riemann-zeta) |
+| 2026‑09‑17 | Anthropic | Science | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) |
+| 2026‑09‑10 | Anthropic | Frontier Red Team | [Measuring tactical intelligence targeting and conventional weapons capabilities of AI models](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |
+| 2026‑09‑09 | Anthropic | Alignment | [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) |
+| 2026‑09‑04 | Anthropic | Science | [Formalizing Fermat's Last Theorem](https://www.anthropic.com/research/formalizing-fermats-last-theorem) |
+| 2026‑08‑28 | Anthropic | Alignment | [Automated researchers can reliably mitigate alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) |
+| 2026‑08‑26 | Anthropic | Societal Impacts | [Enabling independent research on how people use Claude](https://www.anthropic.com/research/enabling-independent-research) |
+| 2026‑08‑18 | Anthropic | Science | [How Claude is accelerating protein design and analytical chemistry](https://www.anthropic.com/research/Claude-accelerates-protein-design) |
+| 2026‑08‑13 | Anthropic | Frontier Red Team | [Patterns and problems in emerging multiagent systems](https://www.anthropic.com/research/multiagent-systems) |
+| 2026‑08‑12 | Anthropic | Economics | [Reviewing the evidence on worker retraining programs](https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs) |
+| 2026‑08‑10 | Anthropic | Science | [Learning more about Claude's mathematical capabilities](https://www.anthropic.com/research/riemann-zeta) |
 <!-- LATEST_PAPERS:END -->
 
 
@@ -67,10 +67,11 @@ Email sending requires these environment variables (see below):
 ## Scheduling
 
 [`.github/workflows/check-papers.yml`](.github/workflows/check-papers.yml)
-runs daily (13:00 UTC) and can also be triggered manually from the Actions
-tab (`workflow_dispatch`). It checks all sources, emails anything new, and
-commits the updated `data/papers.json` and the "Latest papers" table above
-back to `main`.
+runs daily at 8am Europe/Paris time (a small gate job picks the right UTC
+cron trigger across the CET/CEST switch) and can also be triggered manually
+from the Actions tab (`workflow_dispatch`). It checks all sources, emails
+anything new, and commits the updated `data/papers.json` and the "Latest
+papers" table above back to `main`.
 
 ## Adding a new source
 
