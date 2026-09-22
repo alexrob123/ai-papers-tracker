@@ -4,6 +4,17 @@ Tracks new AI research papers from a set of sources and emails you when a
 new one shows up. Currently supports:
 
 - [Anthropic Research](https://www.anthropic.com/research)
+- [OpenAI Research](https://openai.com/research/index/) — the page itself is
+  behind a Cloudflare JS challenge, so this reads it from OpenAI's public
+  [news RSS feed](https://openai.com/news/rss.xml) instead, filtered to the
+  "Research", "Publication", and "Security" categories.
+
+Each source only tracks a specific set of topic categories, listed as a
+constant near the top of its file (`INCLUDED_CATEGORIES` in
+[`tracker/sources/anthropic.py`](tracker/sources/anthropic.py),
+`TRACKED_CATEGORIES` in
+[`tracker/sources/openai.py`](tracker/sources/openai.py)) — add or remove
+an entry there to change what gets tracked.
 
 Known papers are stored in [`data/papers.json`](data/papers.json), keyed by
 URL. A GitHub Actions workflow runs on a schedule, diffs the current source
@@ -17,15 +28,15 @@ file back to the repo.
 | Date | Source | Type | Category | Title |
 | --- | --- | --- | --- | --- |
 | 2026‑09‑17 | Anthropic | Post | Science | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) |
+| 2026‑09‑16 | OpenAI | Post | Research | [Our framework for reporting model misalignment](https://openai.com/index/model-misalignment-reporting-framework) |
 | 2026‑09‑10 | Anthropic | Post | Frontier Red Team | [Measuring tactical intelligence targeting and conventional weapons capabilities of AI models](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |
 | 2026‑09‑09 | Anthropic | Post | Alignment | [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) |
+| 2026‑09‑08 | OpenAI | Post | Research | [On the Navier–Stokes Millennium Prize Problem](https://openai.com/index/navier-stokes-solution) |
+| 2026‑09‑06 | OpenAI | Post | Research | [Research acceleration: The view inside OpenAI](https://openai.com/index/research-acceleration-view-inside-openai) |
 | 2026‑09‑04 | Anthropic | Post | Science | [Formalizing Fermat's Last Theorem](https://www.anthropic.com/research/formalizing-fermats-last-theorem) |
+| 2026‑09‑03 | OpenAI | Post | Security | [Daybreak for Frontline Defenders: $1B to protect essential services](https://openai.com/index/daybreak-for-frontline-defenders) |
+| 2026‑09‑03 | OpenAI | Post | Research | [GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra) |
 | 2026‑08‑28 | Anthropic | Post | Alignment | [Automated researchers can reliably mitigate alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) |
-| 2026‑08‑26 | Anthropic | Post | Societal Impacts | [Enabling independent research on how people use Claude](https://www.anthropic.com/research/enabling-independent-research) |
-| 2026‑08‑18 | Anthropic | Post | Science | [How Claude is accelerating protein design and analytical chemistry](https://www.anthropic.com/research/Claude-accelerates-protein-design) |
-| 2026‑08‑13 | Anthropic | Post | Frontier Red Team | [Patterns and problems in emerging multiagent systems](https://www.anthropic.com/research/multiagent-systems) |
-| 2026‑08‑12 | Anthropic | Post | Economics | [Reviewing the evidence on worker retraining programs](https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs) |
-| 2026‑08‑10 | Anthropic | Post | Science | [Learning more about Claude's mathematical capabilities](https://www.anthropic.com/research/riemann-zeta) |
 <!-- LATEST_PAPERS:END -->
 
 

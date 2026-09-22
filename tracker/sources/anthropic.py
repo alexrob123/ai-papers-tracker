@@ -12,6 +12,17 @@ TYPE = "Post"  # anthropic.com/research is a blog-style listing of posts
 URL = "https://www.anthropic.com/research"
 USER_AGENT = "ai-papers-tracker/1.0 (personal research tracker; https://github.com/alexrob123/ai-papers-tracker)"
 
+# Topic tags shown on the research page. Add or remove one to change which
+# topics get tracked.
+INCLUDED_CATEGORIES = {
+    "Alignment",
+    "Economics",
+    "Frontier Red Team",
+    "Interpretability",
+    "Science",
+    "Societal Impacts",
+}
+
 
 def _parse_date(text: str) -> str:
     return dt.datetime.strptime(text.strip(), "%b %d, %Y").date().isoformat()
@@ -40,6 +51,10 @@ def fetch() -> list[Paper]:
         if time_el is None or title_el is None:
             continue
 
+        category = category_el.get_text(strip=True) if category_el else None
+        if category not in INCLUDED_CATEGORIES:
+            continue
+
         url = f"https://www.anthropic.com{href}"
         papers[url] = Paper(
             source=NAME,
@@ -47,7 +62,7 @@ def fetch() -> list[Paper]:
             url=url,
             date=_parse_date(time_el.get_text(strip=True)),
             type=TYPE,
-            category=category_el.get_text(strip=True) if category_el else None,
+            category=category,
         )
 
     return list(papers.values())

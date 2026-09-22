@@ -9,6 +9,13 @@ END_MARKER = "<!-- LATEST_PAPERS:END -->"
 
 _MARKER_PATTERN = re.compile(re.escape(START_MARKER) + r".*?" + re.escape(END_MARKER), re.DOTALL)
 
+# Source names are lowercase internally (used as SOURCES dict keys); this
+# maps them to their proper display spelling for the table.
+SOURCE_DISPLAY_NAMES = {
+    "anthropic": "Anthropic",
+    "openai": "OpenAI",
+}
+
 
 def render_table(papers: list[dict[str, Any]], limit: int = 10) -> str:
     rows = sorted(papers, key=lambda p: p.get("date", ""), reverse=True)[:limit]
@@ -20,7 +27,7 @@ def render_table(papers: list[dict[str, Any]], limit: int = 10) -> str:
     for paper in rows:
         paper_type = paper.get("type") or "-"
         category = paper.get("category") or "-"
-        source = paper["source"].capitalize()
+        source = SOURCE_DISPLAY_NAMES.get(paper["source"], paper["source"].capitalize())
         # Use a non-breaking hyphen so "YYYY-MM-DD" can't wrap onto two
         # lines when the column is squeezed by a long title.
         date = paper["date"].replace("-", "‑")
