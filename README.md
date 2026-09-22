@@ -14,18 +14,18 @@ file back to the repo.
 *Auto-updated by the scheduled workflow — do not edit this table by hand.*
 
 <!-- LATEST_PAPERS:START -->
-| Date | Source | Category | Title |
-| --- | --- | --- | --- |
-| 2026‑09‑17 | Anthropic | Science | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) |
-| 2026‑09‑10 | Anthropic | Frontier Red Team | [Measuring tactical intelligence targeting and conventional weapons capabilities of AI models](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |
-| 2026‑09‑09 | Anthropic | Alignment | [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) |
-| 2026‑09‑04 | Anthropic | Science | [Formalizing Fermat's Last Theorem](https://www.anthropic.com/research/formalizing-fermats-last-theorem) |
-| 2026‑08‑28 | Anthropic | Alignment | [Automated researchers can reliably mitigate alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) |
-| 2026‑08‑26 | Anthropic | Societal Impacts | [Enabling independent research on how people use Claude](https://www.anthropic.com/research/enabling-independent-research) |
-| 2026‑08‑18 | Anthropic | Science | [How Claude is accelerating protein design and analytical chemistry](https://www.anthropic.com/research/Claude-accelerates-protein-design) |
-| 2026‑08‑13 | Anthropic | Frontier Red Team | [Patterns and problems in emerging multiagent systems](https://www.anthropic.com/research/multiagent-systems) |
-| 2026‑08‑12 | Anthropic | Economics | [Reviewing the evidence on worker retraining programs](https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs) |
-| 2026‑08‑10 | Anthropic | Science | [Learning more about Claude's mathematical capabilities](https://www.anthropic.com/research/riemann-zeta) |
+| Date | Source | Type | Category | Title |
+| --- | --- | --- | --- | --- |
+| 2026‑09‑17 | Anthropic | Post | Science | [How Claude is uplifting biomolecular modeling](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling) |
+| 2026‑09‑10 | Anthropic | Post | Frontier Red Team | [Measuring tactical intelligence targeting and conventional weapons capabilities of AI models](https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities) |
+| 2026‑09‑09 | Anthropic | Post | Alignment | [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) |
+| 2026‑09‑04 | Anthropic | Post | Science | [Formalizing Fermat's Last Theorem](https://www.anthropic.com/research/formalizing-fermats-last-theorem) |
+| 2026‑08‑28 | Anthropic | Post | Alignment | [Automated researchers can reliably mitigate alignment failures](https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures) |
+| 2026‑08‑26 | Anthropic | Post | Societal Impacts | [Enabling independent research on how people use Claude](https://www.anthropic.com/research/enabling-independent-research) |
+| 2026‑08‑18 | Anthropic | Post | Science | [How Claude is accelerating protein design and analytical chemistry](https://www.anthropic.com/research/Claude-accelerates-protein-design) |
+| 2026‑08‑13 | Anthropic | Post | Frontier Red Team | [Patterns and problems in emerging multiagent systems](https://www.anthropic.com/research/multiagent-systems) |
+| 2026‑08‑12 | Anthropic | Post | Economics | [Reviewing the evidence on worker retraining programs](https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs) |
+| 2026‑08‑10 | Anthropic | Post | Science | [Learning more about Claude's mathematical capabilities](https://www.anthropic.com/research/riemann-zeta) |
 <!-- LATEST_PAPERS:END -->
 
 
@@ -77,8 +77,9 @@ papers" table above back to `main`.
 
 1. Create `tracker/sources/<name>.py` with a `NAME` constant and a
    `fetch() -> list[Paper]` function that returns one `Paper` per item
-   (`source`, `title`, `url`, `date` as an ISO date string, and an optional
-   `category`).
+   (`source`, `title`, `url`, `date` as an ISO date string, `type` — e.g.
+   "Post", "Paper", "Technical report", "Software", "Article" — and an
+   optional `category`).
 2. Register it in `tracker/sources/__init__.py`'s `SOURCES` dict.
 
 No other changes are needed — storage, diffing, and notification are

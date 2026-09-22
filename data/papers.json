@@ -4,6 +4,7 @@
     "title": "How Claude is uplifting biomolecular modeling",
     "url": "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
     "date": "2026-09-17",
+    "type": "Post",
     "category": "Science"
   },
   "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities": {
@@ -11,6 +12,7 @@
     "title": "Measuring tactical intelligence targeting and conventional weapons capabilities of AI models",
     "url": "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
     "date": "2026-09-10",
+    "type": "Post",
     "category": "Frontier Red Team"
   },
   "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents": {
@@ -18,6 +20,7 @@
     "title": "An alignment assessment of recent cybersecurity incidents",
     "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
     "date": "2026-09-09",
+    "type": "Post",
     "category": "Alignment"
   },
   "https://www.anthropic.com/research/formalizing-fermats-last-theorem": {
@@ -25,6 +28,7 @@
     "title": "Formalizing Fermat's Last Theorem",
     "url": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
     "date": "2026-09-04",
+    "type": "Post",
     "category": "Science"
   },
   "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures": {
@@ -32,6 +36,7 @@
     "title": "Automated researchers can reliably mitigate alignment failures",
     "url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
     "date": "2026-08-28",
+    "type": "Post",
     "category": "Alignment"
   },
   "https://www.anthropic.com/research/enabling-independent-research": {
@@ -39,6 +44,7 @@
     "title": "Enabling independent research on how people use Claude",
     "url": "https://www.anthropic.com/research/enabling-independent-research",
     "date": "2026-08-26",
+    "type": "Post",
     "category": "Societal Impacts"
   },
   "https://www.anthropic.com/research/Claude-accelerates-protein-design": {
@@ -46,6 +52,7 @@
     "title": "How Claude is accelerating protein design and analytical chemistry",
     "url": "https://www.anthropic.com/research/Claude-accelerates-protein-design",
     "date": "2026-08-18",
+    "type": "Post",
     "category": "Science"
   },
   "https://www.anthropic.com/research/multiagent-systems": {
@@ -53,6 +60,7 @@
     "title": "Patterns and problems in emerging multiagent systems",
     "url": "https://www.anthropic.com/research/multiagent-systems",
     "date": "2026-08-13",
+    "type": "Post",
     "category": "Frontier Red Team"
   },
   "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs": {
@@ -60,6 +68,7 @@
     "title": "Reviewing the evidence on worker retraining programs",
     "url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs",
     "date": "2026-08-12",
+    "type": "Post",
     "category": "Economics"
   },
   "https://www.anthropic.com/research/riemann-zeta": {
@@ -67,6 +76,7 @@
     "title": "Learning more about Claude's mathematical capabilities",
     "url": "https://www.anthropic.com/research/riemann-zeta",
     "date": "2026-08-10",
+    "type": "Post",
     "category": "Science"
   }
 }

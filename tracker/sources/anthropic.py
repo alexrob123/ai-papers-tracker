@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from ..models import Paper
 
 NAME = "anthropic"
+TYPE = "Post"  # anthropic.com/research is a blog-style listing of posts
 URL = "https://www.anthropic.com/research"
 USER_AGENT = "ai-papers-tracker/1.0 (personal research tracker; https://github.com/alexrob123/ai-papers-tracker)"
 
@@ -45,6 +46,7 @@ def fetch() -> list[Paper]:
             title=title_el.get_text(strip=True),
             url=url,
             date=_parse_date(time_el.get_text(strip=True)),
+            type=TYPE,
             category=category_el.get_text(strip=True) if category_el else None,
         )
 

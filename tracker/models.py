@@ -10,6 +10,7 @@ class Paper:
     title: str
     url: str
     date: str  # ISO 8601, e.g. "2026-08-10"
+    type: str  # e.g. "Post", "Paper", "Technical report", "Software", "Article"
     category: str | None = None
 
     def to_dict(self) -> dict[str, Any]:

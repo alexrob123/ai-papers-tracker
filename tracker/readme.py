@@ -13,15 +13,19 @@ _MARKER_PATTERN = re.compile(re.escape(START_MARKER) + r".*?" + re.escape(END_MA
 def render_table(papers: list[dict[str, Any]], limit: int = 10) -> str:
     rows = sorted(papers, key=lambda p: p.get("date", ""), reverse=True)[:limit]
 
-    lines = ["| Date | Source | Category | Title |", "| --- | --- | --- | --- |"]
+    lines = [
+        "| Date | Source | Type | Category | Title |",
+        "| --- | --- | --- | --- | --- |",
+    ]
     for paper in rows:
+        paper_type = paper.get("type") or "-"
         category = paper.get("category") or "-"
         source = paper["source"].capitalize()
         # Use a non-breaking hyphen so "YYYY-MM-DD" can't wrap onto two
         # lines when the column is squeezed by a long title.
         date = paper["date"].replace("-", "‑")
         lines.append(
-            f"| {date} | {source} | {category} | "
+            f"| {date} | {source} | {paper_type} | {category} | "
             f"[{paper['title']}]({paper['url']}) |"
         )
     return "\n".join(lines)
